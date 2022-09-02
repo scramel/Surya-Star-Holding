@@ -287,10 +287,15 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.18.10", "@babel/parser@^7.18.11", "@babel/parser@^7.18.4":
+"@babel/parser@^7.18.10", "@babel/parser@^7.18.11":
   version "7.18.11"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.11.tgz#68bb07ab3d380affa9a3f96728df07969645d2d9"
   integrity sha512-9JKn5vN+hDt0Hdqn1PiJ2guflwP+B6Ga8qbDuoF0PzzVhrzsKIJo8yGqVk6CmMHiMei9w1C1Bp9IMJSIK+HPIQ==
+
+"@babel/parser@^7.18.4":
+  version "7.18.13"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.13.tgz#5b2dd21cae4a2c5145f1fbd8ca103f9313d3b7e4"
+  integrity sha512-dgXcIfMuQ0kgzLB2b9tRZs7TTFFaGM2AbtA4fJgUUYukzGH4jwsS7hzQHEGs67jdehpm22vkgKwvbU+aEflgwg==
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.18.6":
   version "7.18.6"
@@ -1544,10 +1549,10 @@
     semver "^7.3.4"
     strip-ansi "^6.0.0"
 
-"@vue/compiler-sfc@2.7.9":
-  version "2.7.9"
-  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-2.7.9.tgz#aa31813c94de39f4977e4b924eb261c2199218ad"
-  integrity sha512-TD2FvT0fPUezw5RVP4tfwTZnKHP0QjeEUb39y7tORvOJQTjbOuHJEk4GPHUPsRaTeQ8rjuKjntyrYcEIx+ODxg==
+"@vue/compiler-sfc@2.7.10":
+  version "2.7.10"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-2.7.10.tgz#3fe08e780053a3bbf41328c65ae5dfdee0385206"
+  integrity sha512-55Shns6WPxlYsz4WX7q9ZJBL77sKE1ZAYNYStLs6GbhIOMrNtjMvzcob6gu3cGlfpCR4bT7NXgyJ3tly2+Hx8Q==
   dependencies:
     "@babel/parser" "^7.18.4"
     postcss "^8.4.14"
@@ -6175,11 +6180,11 @@ vue-template-es2015-compiler@^1.9.0:
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
 vue@^2.6.14:
-  version "2.7.9"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.7.9.tgz#ac3ccb4a4ac5dd31a8eec4c68a094efe7f83dfbb"
-  integrity sha512-GeWCvAUkjzD5q4A3vgi8ka5r9bM6g8fmNmx/9VnHDKCaEzBcoVw+7UcQktZHrJ2jhlI+Zv8L57pMCIwM4h4MWg==
+  version "2.7.10"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.7.10.tgz#ae516cc6c88e1c424754468844218fdd5e280f40"
+  integrity sha512-HmFC70qarSHPXcKtW8U8fgIkF6JGvjEmDiVInTkKZP0gIlEPhlVlcJJLkdGIDiNkIeA2zJPQTWJUI4iWe+AVfg==
   dependencies:
-    "@vue/compiler-sfc" "2.7.9"
+    "@vue/compiler-sfc" "2.7.10"
     csstype "^3.1.0"
 
 vuex@^3.6.2:

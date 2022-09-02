@@ -2,9 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/router.js'
 import store from './store'
+import { BootstrapVue } from 'bootstrap-vue'
 
-// Sass
-import '@/assets/sass/_main.scss'
+// Bootstrap
+import '@/assets/scss/_main.scss'
+
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
