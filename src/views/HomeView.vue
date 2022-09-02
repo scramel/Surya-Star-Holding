@@ -3,7 +3,7 @@
     <section>
       <b-container class="my-5 text-center">
         <b-col>
-          <h2>Smart trading</h2>
+          <h2>{{ $t('smart_trading') }}</h2>
           <hr>
           <p>Real-time logistics information, price and global consumption reports, management indicators and prospective platforms are some of the tools that we put at the service of our clients.</p>
         </b-col>

@@ -7,16 +7,14 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="about">About Surya</b-nav-item>
-          <b-nav-item to="smart-trading">Smart Trading</b-nav-item>
-          <b-nav-item to="operational-diversification">Operational Diversification</b-nav-item>
-          <b-nav-item to="contact">Contact</b-nav-item>
+          <b-nav-item to="/">{{ $t('home') }}</b-nav-item>
+          <b-nav-item to="about">{{ `${$t('about')} ${$t('surya').split(' ')[0]}` }}</b-nav-item>
+          <b-nav-item to="smart-trading">{{ $t('smart_trading') }}</b-nav-item>
+          <b-nav-item to="operational-diversification">{{ $t('operational_diversification') }}</b-nav-item>
+          <b-nav-item to="contact">{{ $t('contact') }}</b-nav-item>
           <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-            <b-dropdown-item href="#">ES</b-dropdown-item>
-            <b-dropdown-item href="#">RU</b-dropdown-item>
-            <b-dropdown-item href="#">FA</b-dropdown-item>
+            <b-dropdown-item @click="$i18n.locale = 'en'">EN</b-dropdown-item>
+            <b-dropdown-item @click="$i18n.locale = 'es'">ES</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -29,9 +27,9 @@
             <h2>{{ currentTitle }}</h2>
             <div v-if="isHome">
               <hr class="ml-0">
-              <p>We are an international company that markets raw materials and products<br>derived from the oil industry, contributing to the responsible development<br>of the global energy industry.</p>
+              <p v-html="$t('header.description')"></p>
               <br>
-              <router-link :to="{ name: 'about' }" class="btn btn-tertiary" tag="button">About us ></router-link>
+              <router-link :to="{ name: 'about' }" class="btn btn-tertiary" tag="button">{{ $t('header.button') }} ></router-link>
             </div>
           </div>
         </b-row>
@@ -55,8 +53,13 @@ export default {
     },
     currentTitle() {
       const name = this.$route.name
-      if (this.isHome) return 'Surya Star Holding'
-      const titles = { about: 'About Surya Star Holding', smart_trading: 'Smart Trading', operational_diversification: 'Operational Diversification', contact: 'Contact Us' }
+      if (this.isHome) return this.$t('surya')
+      const titles = {
+        about: `${this.$t('about')} ${this.$t('surya')}`,
+        smart_trading: this.$t('smart_trading'),
+        operational_diversification: this.$t('operational_diversification'),
+        contact: this.$t('contact')
+      }
       return titles[name.replace(/-/g, "_")]
     }
   }
