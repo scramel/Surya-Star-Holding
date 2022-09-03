@@ -1,8 +1,8 @@
 <template>
   <div class="info-section py-5">
-    <img :src="require(`@/assets/images/${img}.png`)" alt="Image" :style="reverse ? `left: 0` : `right: 0`">
+    <img :src="require(`@/assets/images/${img}.webp`)" alt="Image" :style="reverse ? `left: 0` : `right: 0`">
     <b-container class="info-section-container h-100 my-5" fluid>
-      <b-row align-v="center" class="h-100" :class="`m${reverse ? 'l' : 'r'}-auto`" :style="`max-width: ${width ? width : 50}%; margin-${reverse ? 'right' : 'left'}: 6vw;`">
+      <b-row align-v="center" class="info-section-card-container h-100" :class="`m${reverse ? 'l' : 'r'}-auto`" :style="`max-width: ${width ? width : 50}%; margin-${reverse ? 'right' : 'left'}: 6vw;`">
         <div class="info-section-card p-5">
           <h3>{{ title }}</h3>
           <hr class="ml-0">
@@ -46,6 +46,27 @@ export default {
     }
     &-container {
       position: relative;
+    }
+    @media only screen and (max-width: 768px) {
+      padding: 0 !important;
+      flex-direction: column;
+      img {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+      &-container {
+        margin: 0 !important;
+      }
+      &-card-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+      &-card {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+        padding: 2rem !important;
+      }
     }
   }
 </style>

@@ -3,12 +3,16 @@ import App from './App.vue'
 import router from './router/router.js'
 import store from './store'
 import VueI18n from 'vue-i18n'
+import VueCarousel from 'vue-carousel';
 import messages from './i18n'
 import { BootstrapVue } from 'bootstrap-vue'
 
 // Bootstrap
 import '@/assets/scss/_main.scss'
 Vue.use(BootstrapVue)
+
+// Carousel
+Vue.use(VueCarousel)
 
 // Internationalization
 Vue.use(VueI18n)
