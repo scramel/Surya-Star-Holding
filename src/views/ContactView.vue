@@ -6,17 +6,17 @@
         <b-row>
           <b-col>
             <b-card border-variant="light" class="p-3 mb-4 contact-form mx-auto">
-              <h3>Llene el siguiente formulario:</h3>
+              <h3>{{ $t('contactView.section1.form.title') }}</h3>
               <br>
               <b-form @submit="onSubmit">
-                <b-form-group id="input-group-1" label="Your Name:" label-for="input-1">
+                <b-form-group id="input-group-1" :label="this.$t('contactView.section1.form.name')" label-for="input-1">
                   <b-form-input
                     id="input-1"
                     v-model="form.fillname"
                     required
                   ></b-form-input>
                 </b-form-group>
-                <b-form-group id="input-group-2" label="Email:" label-for="input-2">
+                <b-form-group id="input-group-2" :label="this.$t('contactView.section1.form.email')" label-for="input-2">
                   <b-form-input
                     id="input-2"
                     v-model="form.email"
@@ -24,21 +24,21 @@
                     required
                   ></b-form-input>
                 </b-form-group>
-                <b-form-group id="input-group-3" label="Phone:" label-for="input-3">
+                <b-form-group id="input-group-3" :label="this.$t('contactView.section1.form.phone')" label-for="input-3">
                   <b-form-input
                     id="input-3"
                     v-model="form.phone"
                     required
                   ></b-form-input>
                 </b-form-group>
-                <b-form-group id="input-group-4" label="Your Company's Name:" label-for="input-4">
+                <b-form-group id="input-group-4" :label="this.$t('contactView.section1.form.compName')" label-for="input-4">
                   <b-form-input
                     id="input-4"
                     v-model="form.enterprise"
                     required
                   ></b-form-input>
                 </b-form-group>
-                <b-form-group id="input-group-5" label="How can we help you?" label-for="input-5">
+                <b-form-group id="input-group-5" :label="this.$t('contactView.section1.form.textBox')" label-for="input-5">
                   <b-form-textarea
                     id="input-5"
                     v-model="form.about"
@@ -47,7 +47,7 @@
                   ></b-form-textarea>
                 </b-form-group>
                 <b-form-group class="text-right">
-                  <b-button type="submit" squared variant="primary">Submit ></b-button>
+                  <b-button type="submit" squared variant="primary">{{ $t('contactView.section1.form.submit') }}</b-button>
                 </b-form-group>
               </b-form>
             </b-card>
@@ -57,13 +57,13 @@
               <h3 style="color: var(--primary);">{{ $t('surya') }}</h3>
               <hr class="ml-0" style="border-color: var(--primary);">
               <small style="color: white;">
-                <b>Address:</b><br>
-                Aquilino de La Guardia Street, Ocean Business Plaza, 14th Floor. Marbella, Panama.
+                <b>{{ $t('contactView.section1.contactBox.address') }}</b><br>
+                {{ $t('contactView.section1.contactBox.addressV') }}
                 <br>
                 <br>
-                <b>Email:</b><br>
-                info@suryastarholding.com<br>
-                www.suryastarholding.com
+                <b>{{ $t('contactView.section1.contactBox.email') }}</b><br>
+                {{ $t('contactView.section1.contactBox.emailV') }}<br>
+                {{ $t('contactView.section1.contactBox.emailV2') }}
               </small>
             </b-card>
           </b-col>
@@ -75,9 +75,13 @@
 
 <script>
 export default {
+  title() {
+    return this.pageTitle
+  },
   name: 'OperationalDiversificationView',
   data() {
     return {
+      pageTitle: this.$t('contact'),
       form: {
         fullname: '',
         email: '',

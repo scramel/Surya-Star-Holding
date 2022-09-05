@@ -47,16 +47,16 @@
             <img src="@/assets/icons/logo_alt.svg" alt="Logo">
             <p>
               <small style="font-family: 'Nunito Sans', sans-serif; font-size: 14px; line-height: 50%;">
-                All rights reserved 2022. Suryastarholding.com
+                {{ $t('footer.rights') }}
               </small>
             </p>
           </b-col>
           <b-col class="footer-links mb-3">
-            <router-link :to="{ name: 'home' }">Home<br></router-link>
-            <router-link :to="{ name: 'about' }">About Surya<br></router-link>
-            <router-link :to="{ name: 'smart-trading' }">Smart Trading<br></router-link>
-            <router-link :to="{ name: 'operational-diversification' }">Operational Diversification<br></router-link>
-            <router-link :to="{ name: 'contact' }">Contact Us<br></router-link>
+            <router-link :to="{ name: 'home' }">{{ $t('home') }}<br></router-link>
+            <router-link :to="{ name: 'about' }">{{ $t('about') }}<br></router-link>
+            <router-link :to="{ name: 'smart-trading' }">{{ $t('smart_trading') }}<br></router-link>
+            <router-link :to="{ name: 'operational-diversification' }">{{ $t('operational_diversification') }}<br></router-link>
+            <router-link :to="{ name: 'contact' }">{{ $t('contact') }}<br></router-link>
           </b-col>
           <b-col class="mb-3" lg="6">
             <div class="d-flex mb-3">
@@ -77,8 +77,8 @@
               </div>
             </div>
             <small>
-              <b><span style="color: var(--primary)">Address:</span></b><br>Aquilino de La Guardia Street, Ocean Business Plaza, 14th Floor. Marbella, Panama.<br>
-              <b><span style="color: var(--primary)">Email:</span></b><br>info@suryastarholding.com<br>www.suryastarholding.com
+              <b><span style="color: var(--primary)">{{ $t('contactView.section1.contactBox.address') }}</span></b><br>{{ $t('contactView.section1.contactBox.addressV') }}<br>
+              <b><span style="color: var(--primary)">{{ $t('contactView.section1.contactBox.email') }}</span></b><br>info@suryastarholding.com<br>{{ $t('contactView.section1.contactBox.emailV2') }}
             </small>
           </b-col>
         </b-row>

@@ -9,7 +9,11 @@ import { BootstrapVue } from 'bootstrap-vue'
 
 // Bootstrap
 import '@/assets/scss/_main.scss'
+
+// Title
+import titleMixin from './plugins/titleMixin'
 Vue.use(BootstrapVue)
+Vue.mixin(titleMixin)
 
 // Carousel
 Vue.use(VueCarousel)

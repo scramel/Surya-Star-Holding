@@ -5,7 +5,7 @@
         <b-col>
           <h2>{{ $t('smart_trading') }}</h2>
           <hr>
-          <p>Real-time logistics information, price and global consumption reports, management indicators and prospective platforms are some of the tools that we put at the service of our clients.</p>
+          <p>{{ $t('homeView.section1.logistics')}}</p>
         </b-col>
         <br>
         <b-card-group deck>
@@ -13,16 +13,16 @@
             <b-card-text class="p-3 my-auto text-left">
               <h5>{{ card.title }}</h5>
               <small>{{ card.description }}</small>
-              <router-link :to="{ name: 'smart-trading' }">Know more ></router-link>
+              <router-link :to="{ name: 'smart-trading' }">{{ $t('buttons.knowMore')}}</router-link>
             </b-card-text>
           </b-card>
         </b-card-group>
       </b-container>
     </section>
     <InfoSection
-    :title="'We trade energy products on a global scale, with an efficient, transparent dynamic and in alliance with the main producers in the world.'"
-    :description="'With a presence in Asia, Europe and America, we have a wide portfolio of solutions that include the supply, transport and logistics of our clients’s requirements, supported by a state-of-the-art technological platform that allows constant visibility and control of our operations.'"
-    :link_text="'What we do'"
+    :title="this.$t('homeView.section2.title')"
+    :description="this.$t('homeView.section2.text')"
+    :link_text="this.$t('homeView.section2.link')"
     :link_to="'about'"
     :img="'bg-1'"
     />
@@ -32,7 +32,7 @@
           <b-col class="pr-5">
             <h2 style="color: var(--primary); font-size: 38px;">{{ $t('operational_diversification') }}</h2>
             <hr class="ml-0" style="border-color: var(--primary);">
-            <p class="pr-5" style="color: white;">Surya Star Holdings has diversified its operation to generate an impact in other commercial and social sectors.</p>
+            <p class="pr-5" style="color: white;">{{ $t('homeView.section3.text') }}</p>
           </b-col>
           <b-col cols="7" class="p-0">
             <carousel mouseDrag :adjustableHeight="false" :perPageCustom="[[0, 1], [1200, 2]]">
@@ -42,7 +42,7 @@
                     <h5 style="color: black;">{{ card.title }}</h5>
                     <p style="font-size: 16px;">{{ card.description }}</p>
                   </b-card-text>
-                  <b-button to="operational-diversification" variant="quaternary">Know more ></b-button>
+                  <b-button to="operational-diversification" variant="quaternary">{{ $t('buttons.knowMore') }}</b-button>
                 </b-card>
               </slide>
             </carousel>
@@ -51,9 +51,9 @@
       </b-container>
     </section>
     <InfoSection
-    :title="'Innovation and Sustainability.'"
-    :description="'At the roots of our purpose is innovation. Global sustainability depends on human beings acting more responsibly in the use of resources and developing ways to protect the planet while continuing to search for a better way of life..'"
-    :link_text="'Contact us'"
+    :title="this.$t('homeView.section4.title')"
+    :description="this.$t('homeView.section4.text')"
+    :link_text="this.$t('buttons.contactUs')"
     :link_to="'contact'"
     :img="'bg-2-alt'"
     :reverse="true"
@@ -64,50 +64,54 @@
 <script>
 import InfoSection from '@/components/InfoSection.vue'
 export default {
+  title() {
+    return this.pageTitle
+  },
   name: 'HomeView',
   components: {
     InfoSection
   },
   data() {
     return {
+      pageTitle: this.$t('home'),
       slide: 0,
       sliding: null,
       cards: [{
-        title: 'Crude oil',
-        description: 'Surya has extensive experience in crude oil marketing, with access to the main grades and suppliers worldwide.'
+        title: this.$t('homeView.section1.crudeOil'),
+        description: this.$t('homeView.section1.crudeOilText')
       }, {
-        title: 'Derivative Products',
-        description: 'Supported by our global relationships, and aligned with our Crude Oil suppliers, we have access to refined products derived from the oil industry.'
+        title: this.$t('homeView.section1.derivativeProducts'),
+        description: this.$t('homeView.section1.derivativeProductsText')
       }, {
-        title: 'Dry bulk commodities',
-        description: 'We are specialists in the commercialization of Solid products, with a high supply capacity in the markets of origin, or in the final destination of our clients.'
+        title: this.$t('homeView.section1.dryBulkCommodities'),
+        description: this.$t('homeView.section1.dryBulkCommoditiesText')
       }, {
-        title: 'Other Commodities',
-        description: 'We are able to present supply solutions for various raw materials and materials for the primary sector of the economy.'
+        title: this.$t('homeView.section1.otherCommodites'),
+        description: this.$t('homeView.section1.otherCommoditesText')
       }],
       carousel: [{
-        title: 'Research and Market Studies',
-        description: 'Research and market, commercial, social and political studies. Opinion analysis, surveys and audience pulse.',
+        title: this.$t('homeView.section3.carrousel.box1.title'),
+        description: this.$t('homeView.section3.carrousel.box1.text'),
         img: 'engineering',
-        link_text: 'Know more',
+        link_text: this.$t('buttons.knowMore'),
         link_to: 'operational_diversification'
       }, {
-        title: 'Engineering and Sustainable Construction',
-        description: 'Both directly and through strategic allies, we have investments and projects in the construction of communities of social interest.',
+        title: this.$t('homeView.section3.carrousel.box2.title'),
+        description: this.$t('homeView.section3.carrousel.box2.text'),
         img: 'research',
-        link_text: 'Know more',
+        link_text: this.$t('buttons.knowMore'),
         link_to: 'operational_diversification'
       }, {
-        title: 'Placeholder Text',
-        description: 'This is a placeholder text.',
+        title: this.$t('homeView.section3.carrousel.box3.title'),
+        description: this.$t('homeView.section3.carrousel.box3.text'),
         img: 'research',
-        link_text: 'Know more',
+        link_text: this.$t('buttons.knowMore'),
         link_to: 'operational_diversification'
       }, {
-        title: 'Placeholder Text',
-        description: 'This is a placeholder text.',
+        title: this.$t('homeView.section3.carrousel.box4.title'),
+        description: this.$t('homeView.section3.carrousel.box4.text'),
         img: 'engineering',
-        link_text: 'Know more',
+        link_text: this.$t('buttons.knowMore'),
         link_to: 'operational_diversification'
       }]
     }
