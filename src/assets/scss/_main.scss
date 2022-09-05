@@ -1,0 +1,211 @@
+// Your variable overrides
+$primary: #E3CD8E;
+$secondary: #006B68;
+$social: #83C3E6;
+$purple: #672C8F;
+$info: white;
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+// Document
+* { transition: .3s; }
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('@/assets/fonts/poppins/Poppins-Medium.otf')
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('@/assets/fonts/poppins/Poppins-Bold.otf')
+}
+@font-face {
+  font-family: FiraSans-Regular;
+  src: url('@/assets/fonts/fira-sans/FiraSans-Regular.otf')
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url('@/assets/fonts/fira-sans/FiraSans-Light.otf')
+}
+
+// Fonts
+h2, h3, h5 {
+  font-family: Poppins-Bold;
+}
+small, label {
+  font-family: FiraSans-Light;
+  font-size: 16px;
+}
+p {
+  font-family: FiraSans-Regular;
+  font-size: 20px;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+  @media only screen and (max-width: 768px) {
+    &.operational-diversification, &.about {
+      font-size: 30px;
+    }
+  }
+}
+h3 {
+  font-size: 28px;
+}
+h5 {
+  color: $primary;
+  font-size: 22px;
+}
+
+// Navbar
+nav {
+  background-color: white;
+  font-family: Poppins-Medium;
+  text-transform: uppercase;
+  a {
+    color: black !important;
+    &:hover {
+      color: $primary !important;
+    }
+    &.router-link-exact-active {
+      color: var(--primary) !important;
+    }
+    img {
+      height: 13vh;
+    }
+  }
+  .navbar-toggler {
+    filter: brightness(0);
+  }
+}
+
+// Inputs
+input, textarea {
+  &.form-control {
+    border-radius: 0;
+    border: none;
+    background-color: #F5F5F5;
+  }
+}
+
+// Separator
+hr {
+  text-align: left;
+  width: 80px;
+  border-width: 6px;
+  border-color: black;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+// Buttons
+.btn {
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  border: solid 2px;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: .5rem 1rem;
+  transition: .2s;
+  &-primary {
+    border: none;
+    &:hover {
+      background: $purple;
+      color: white;
+    }
+  }
+  &-tertiary {
+    background-color: transparent;
+    color: $purple;
+    border-color: $purple;
+    &:hover {
+      color: white;
+      border-color: white;
+    }
+  }
+  &-quaternary {
+    color: purple;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    &:hover {
+      color: $primary;
+      background-color: transparent;
+      padding-left: .5rem;
+    }
+  }
+}
+
+// Cards
+.card {
+  border-radius: 0;
+  border: none;
+  img { border-radius: 0; object-fit: cover; }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column !important;
+    img {
+      max-height: 15rem;
+    }
+  }
+}
+
+// Container
+.container {
+  @media only screen and (max-width: 768px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+// Carousel
+.carousel {
+  &-inner {
+    
+  }
+  &-caption {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Container
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1240px;
+  }
+}
+
+// Carousel
+.VueCarousel-dot {
+  background-color: gray !important;
+  &--active {
+    background-color: $primary !important;
+  }
+  &-container {
+    margin-top: 0 !important;
+    button {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+// Rows {
+.row {
+  @media only screen and (max-width: 768px) {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+// Columns
+.col-7 {
+  @media only screen and (max-width: 768px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
