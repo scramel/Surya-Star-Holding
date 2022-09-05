@@ -64,19 +64,17 @@
 <script>
 import InfoSection from '@/components/InfoSection.vue'
 export default {
-  title() {
-    return this.pageTitle
-  },
+  title() { return this.pageTitle },
   name: 'HomeView',
-  components: {
-    InfoSection
-  },
+  components: { InfoSection },
   data() {
     return {
-      pageTitle: this.$t('home'),
-      slide: 0,
-      sliding: null,
-      cards: [{
+      pageTitle: this.$t('home')
+    }
+  },
+  computed: {
+    cards() {
+      return [{
         title: this.$t('homeView.section1.crudeOil'),
         description: this.$t('homeView.section1.crudeOilText')
       }, {
@@ -88,8 +86,10 @@ export default {
       }, {
         title: this.$t('homeView.section1.otherCommodites'),
         description: this.$t('homeView.section1.otherCommoditesText')
-      }],
-      carousel: [{
+      }]
+    },
+    carousel() {
+      return [{
         title: this.$t('homeView.section3.carrousel.box1.title'),
         description: this.$t('homeView.section3.carrousel.box1.text'),
         img: 'engineering',
@@ -99,18 +99,6 @@ export default {
         title: this.$t('homeView.section3.carrousel.box2.title'),
         description: this.$t('homeView.section3.carrousel.box2.text'),
         img: 'research',
-        link_text: this.$t('buttons.knowMore'),
-        link_to: 'operational_diversification'
-      }, {
-        title: this.$t('homeView.section3.carrousel.box3.title'),
-        description: this.$t('homeView.section3.carrousel.box3.text'),
-        img: 'research',
-        link_text: this.$t('buttons.knowMore'),
-        link_to: 'operational_diversification'
-      }, {
-        title: this.$t('homeView.section3.carrousel.box4.title'),
-        description: this.$t('homeView.section3.carrousel.box4.text'),
-        img: 'engineering',
         link_text: this.$t('buttons.knowMore'),
         link_to: 'operational_diversification'
       }]
