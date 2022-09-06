@@ -53,7 +53,7 @@ export default {
         img: 'card-h5'
       }, {
         title: this.$t('operDiv.section2.box4.title'),
-        description: this.$t('operDiv.section2.box3.text'),
+        description: this.$t('operDiv.section2.box4.text'),
         img: 'card-h6'
       }]
     }
