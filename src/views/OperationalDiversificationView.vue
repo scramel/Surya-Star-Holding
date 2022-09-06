@@ -30,14 +30,16 @@
 
 <script>
 export default {
-  title() {
-    return this.pageTitle
-  },
+  title() { return this.pageTitle },
   name: 'OperationalDiversificationView',
   data() {
     return {
-      pageTitle: this.$t('operational_diversification'),
-      cards: [{
+      pageTitle: this.$t('operational_diversification')
+    }
+  },
+  computed: {
+    cards() {
+      return [{
         title: this.$t('operDiv.section2.box1.title'),
         description: this.$t('operDiv.section2.box1.text'),
         img: 'card-h3'

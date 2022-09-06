@@ -37,17 +37,17 @@
 <script>
 import InfoSection from '@/components/InfoSection.vue'
 export default {
-  title() {
-    return this.pageTitle
-  },
+  title() { return this.pageTitle },
   name: 'SmartTradingView',
-  components: {
-    InfoSection
-  },
+  components: { InfoSection },
   data() {
     return {
-      pageTitle: this.$t('smart_trading'),
-      carousel: [{
+      pageTitle: this.$t('smart_trading')
+    }
+  },
+  computed: {
+    carousel() {
+      return [{
         title: this.$t('smartOp.section2.box1.title'),
         description: this.$t('smartOp.section2.box1.text'),
         img: 'card-h1.webp'

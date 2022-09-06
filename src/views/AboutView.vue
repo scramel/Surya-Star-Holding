@@ -31,17 +31,17 @@
 <script>
 import InfoSection from '@/components/InfoSection.vue'
 export default {
-  title() {
-    return this.pageTitle
-  },
+  title() { return this.pageTitle },
   name: 'AboutView',
-  components: {
-    InfoSection
-  },
+  components: { InfoSection },
   data() {
     return {
-      pageTitle: this.$t('about'),
-      carousel: [{
+      pageTitle: this.$t('about')
+    }
+  },
+  computed: {
+    carousel() {
+      return [{
         title: this.$t('aboutView.section2.box1.title'),
         description: this.$t('aboutView.section2.box1.text'),
         img: 'oil-industry'
